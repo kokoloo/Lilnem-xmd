@@ -12,7 +12,7 @@ import sharp from 'sharp'
 export async function sticker(media, options = {}) {
   try {
     const {
-      pack = 'MERILDA-MD',
+      pack = 'LILNEM-XMD',
       author = 'Bot',
       type = 'full',
       categories = ['🤖'],

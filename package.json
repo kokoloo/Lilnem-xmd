@@ -1,5 +1,5 @@
 {
-  "name": "MERILDA-MD",
+  "name": "Lilnem-XMD",
   "version": "1.0.0",
   "description": "WhatsApp Bot using Baileys",
   "main": "index.js",
@@ -7,11 +7,11 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "hhhisoka , dev-u2, hhhisoka-bot",
+  "author": "lilnem , dev-u2, lilnem-bot",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hhhisoka-bot/MERILDA-MD"
+    "url": "https://github.com/kokoloo/Lilnem-xmd"
   },
   "dependencies": {
     "@colors/colors": "^1.5.0",

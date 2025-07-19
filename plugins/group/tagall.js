@@ -5,7 +5,7 @@ const handler = async (m, { conn, text, participants, isAdmins, isOwner, reply }
   const message = text || "📢 Attention tout le monde!"
   let teks = `*📢 ANNONCE GÉNÉRALE*\n\n`
   teks += `💬 *Message:* ${message}\n\n`
-  teks += `👥 *Membres mentionnés:*\n`
+  teks += `👥 muriseés:*\n`
   
   for (const mem of participants) {
     teks += `┣➥ @${mem.id.split('@')[0]}\n`

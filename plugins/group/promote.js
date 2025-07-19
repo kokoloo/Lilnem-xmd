@@ -18,7 +18,7 @@ const handler = async (m, { conn, text, prefix, command, isAdmins, isBotAdmins, 
     let number = text.replace(/[^0-9]/g, '')
     
     if (number.length < 8 || number.length > 15) {
-      return reply("❌ Numéro invalide! Format attendu: 22501234567")
+      return reply("❌ isa number chaidzo attendu: 263717869574")
     }
     
     user = number + '@s.whatsapp.net'

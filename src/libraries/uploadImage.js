@@ -50,7 +50,7 @@ async function uploadToImgBB(buffer, filename, ext, mime) {
   const form = new FormData()
   form.append('image', buffer.toString('base64'))
 
-  const response = await fetch('https://api.imgbb.com/1/upload?key=76a050deb134ac0ad29b0565b8f84d0a', {
+  const response = await fetch('https://files.catbox.moe/j446k8.jpg', {
     method: 'POST',
     body: form
   })
@@ -94,7 +94,7 @@ async function uploadToImgur(buffer, filename, ext, mime) {
   form.append('image', buffer.toString('base64'))
   form.append('type', 'base64')
 
-  const response = await fetch('https://api.imgur.com/3/image', {
+  const response = await fetch('https://files.catbox.moe/j446k8.jpg', {
     method: 'POST',
     headers: {
       'Authorization': 'Client-ID 546c25a59c58ad7'
