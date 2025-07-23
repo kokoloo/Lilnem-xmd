@@ -4,7 +4,7 @@ const { generateWAMessageFromContent, prepareWAMessageMedia, proto } = baileys
 import fetch from 'node-fetch'
 
 const handler = async (m, { conn, text, participants, args, isAdmins, isBotAdmins, reply }) => {
-  if (!isAdmins) return reply("Commande réservée aux admins!")
+  if (!isAdmins) return reply("Command only to goffie ass admin!")
   if (!isBotAdmins) return reply("Le bot doit être admin!")
   if (!args[0]) return reply("Entrez le numéro à ajouter!\nExemple: .add 22501234567")
 
