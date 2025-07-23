@@ -1,4 +1,3 @@
-
 import { getCommands } from '../../lib/utils/pluginLoader.js';
 
 const handler = async (m, { conn, prefix, pushname }) => {
@@ -6,26 +5,26 @@ const handler = async (m, { conn, prefix, pushname }) => {
     const commands = getCommands();
     
     if (!commands || Object.keys(commands).length === 0) {
-      return m.reply("*Aucune commande disponible pour le moment*");
+      return m.reply("*No commands available at the moment*");
     }
 
-    // Organiser les commandes par catégorie
+    // Organize commands by category
     const categories = {};
     
     Object.keys(commands).forEach(cmd => {
       const command = commands[cmd];
-      const category = command.category || 'Autres';
+      const category = command.category || 'Others';
       
       if (!categories[category]) {
         categories[category] = [];
       }
       
-      // Éviter les doublons (alias)
+      // Avoid duplicates (aliases)
       if (!command.isAlias) {
         categories[category].push({
           name: cmd,
           help: command.metadata?.help || [cmd],
-          description: command.metadata?.description || 'Aucune description',
+          description: command.metadata?.description || 'No description',
           owner: command.metadata?.owner || false,
           premium: command.metadata?.premium || false,
           group: command.metadata?.group || false,
@@ -34,15 +33,15 @@ const handler = async (m, { conn, prefix, pushname }) => {
       }
     });
 
-    // Construire le message du menu
+    // Build the menu message
     let menuText = `╭─❍「 *${global.botName || 'LILNEM-XMD'}* 」❍\n`;
-    menuText += `├❍ *Utilisateur:* ${pushname}\n`;
-    menuText += `├❍ *Préfix:* ${prefix}\n`;
-    menuText += `├❍ *Total commandes:* ${Object.keys(commands).length}\n`;
+    menuText += `├❍ *User:* ${pushname}\n`;
+    menuText += `├❍ *Prefix:* ${prefix}\n`;
+    menuText += `├❍ *Total commands:* ${Object.keys(commands).length}\n`;
     menuText += `├❍ *Version:* ${global.botVersion || '1.0.0'}\n`;
     menuText += `╰─❍\n\n`;
 
-    // Ajouter les catégories
+    // Add categories
     const categoryEmojis = {
       'info': '📊',
       'tools': '🛠️',
@@ -63,7 +62,7 @@ const handler = async (m, { conn, prefix, pushname }) => {
       categories[category].forEach(cmd => {
         let cmdText = `├❍ ${prefix}${cmd.name}`;
         
-        // Ajouter des indicateurs
+        // Add indicators
         if (cmd.owner) cmdText += ' 👑';
         if (cmd.premium) cmdText += ' 💎';
         if (cmd.group) cmdText += ' 👥';
@@ -76,27 +75,4 @@ const handler = async (m, { conn, prefix, pushname }) => {
     });
 
     // Footer
-    menuText += `╭─❍「 *INFORMATIONS* 」\n`;
-    menuText += `├❍ 👑 = Commande owner uniquement\n`;
-    
-    menuText += `├❍ 👥 = Commande groupe uniquement\n`;
-    menuText += `├❍ 👮 = Commande admin groupe\n`;
-    menuText += `╰─❍\n\n`;
-    menuText += `*Développé par ${global.ownerName || 'hhhisoka'}*`;
-
-    // Envoyer le menu
-    await conn.sendMessage(m.chat, {
-      text: menuText,
-    }, { quoted: m });
-
-  } catch (error) {
-    console.error('Erreur dans le menu:', error);
-    await m.reply("*Erreur lors de la génération du menu*");
-  }
-};
-
-handler.help = ["menu", "help"];
-handler.tags = ["info"];
-handler.command = ["menu", "help", "?"];
-
-export default handler;
+    menuText +=

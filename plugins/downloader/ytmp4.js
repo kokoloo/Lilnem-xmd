@@ -1,4 +1,3 @@
-
 import fetch from 'node-fetch';
 import yts from 'yt-search';
 
@@ -6,11 +5,11 @@ let downloading = false;
 
 const handler = async (m, { conn, text, args, command, prefix, reply }) => {
   if (!args[0]) {
-    return reply(`*Utilisez: ${prefix + command} <lien YouTube ou terme de recherche>*`);
+    return reply(`*Usage: ${prefix + command} <YouTube link or search term>*`);
   }
 
   if (downloading) {
-    return reply("*Un téléchargement est déjà en cours. Veuillez patienter...*");
+    return reply("*A download is already in progress. Please wait...*");
   }
 
   downloading = true;
@@ -18,38 +17,11 @@ const handler = async (m, { conn, text, args, command, prefix, reply }) => {
   try {
     let youtubeLink = args.join(' ');
     
-    // Si ce n'est pas un lien YouTube, rechercher
+    // If it's not a YouTube link, search
     if (!youtubeLink.includes('youtube.com') && !youtubeLink.includes('youtu.be')) {
       const searchResults = await yts(youtubeLink);
       if (!searchResults.videos.length) {
         downloading = false;
-        return reply("*Aucune vidéo trouvée pour votre recherche*");
-      }
-      youtubeLink = searchResults.videos[0].url;
-    }
-
-    await reply("*🎬 Téléchargement de la vidéo en cours...*");
-
-    // Pour l'instant, on retourne juste les informations
-    // Vous devrez implémenter votre API de téléchargement préférée
-    const videoInfo = await yts({ videoId: youtubeLink.split('v=')[1]?.split('&')[0] || youtubeLink.split('/').pop() });
-    
-    if (videoInfo) {
-      await reply(`✅ *Vidéo trouvée!*\n📱 *Titre:* ${videoInfo.title}\n👤 *Auteur:* ${videoInfo.author.name}\n⏱️ *Durée:* ${videoInfo.timestamp}\n\n_Note: Implémentez votre API de téléchargement préférée dans ce plugin_`);
-    } else {
-      await reply("❌ *Impossible de récupérer les informations de la vidéo*");
-    }
-
-  } catch (error) {
-    console.error('Erreur lors du téléchargement vidéo:', error);
-    await reply("*❌ Erreur lors du téléchargement. Veuillez réessayer.*");
-  } finally {
-    downloading = false;
-  }
-};
-
-handler.help = ["ytmp4", "ytv"];
-handler.tags = ["downloader"];
-handler.command = /^(video|ytmp4|ytv|mp4)$/i;
-
-export default handler;
+        return reply("*No video found for your search*");
+        
+        {}

@@ -1,4 +1,3 @@
-
 import fetch from 'node-fetch';
 import yts from 'yt-search';
 
@@ -6,11 +5,11 @@ let downloading = false;
 
 const handler = async (m, { conn, text, args, command, prefix, reply }) => {
   if (!args[0]) {
-    return reply(`*Utilisez: ${prefix + command} <lien YouTube ou terme de recherche>*`);
+    return reply(`*Usage: ${prefix + command} <YouTube link or search term>*`);
   }
 
   if (downloading) {
-    return reply("*Un téléchargement est déjà en cours. Veuillez patienter...*");
+    return reply("*A download is already in progress. Please wait...*");
   }
 
   downloading = true;
@@ -18,31 +17,31 @@ const handler = async (m, { conn, text, args, command, prefix, reply }) => {
   try {
     let youtubeLink = args.join(' ');
     
-    // Si ce n'est pas un lien YouTube, rechercher
+    // If this is not a YouTube link, search for it
     if (!youtubeLink.includes('youtube.com') && !youtubeLink.includes('youtu.be')) {
       const searchResults = await yts(youtubeLink);
       if (!searchResults.videos.length) {
         downloading = false;
-        return reply("*Aucune vidéo trouvée pour votre recherche*");
+        return reply("*No video found for your search*");
       }
       youtubeLink = searchResults.videos[0].url;
     }
 
-    await reply("*🎵 Téléchargement de l'audio en cours...*");
+    await reply("*🎵 Downloading audio...*");
 
-    // Pour l'instant, on retourne juste les informations
-    // Vous devrez implémenter votre API de téléchargement préférée
+    // For now, we just return the information
+    // You will need to implement your preferred download API
     const videoInfo = await yts({ videoId: youtubeLink.split('v=')[1]?.split('&')[0] || youtubeLink.split('/').pop() });
     
     if (videoInfo) {
-      await reply(`✅ *Audio trouvé!*\n📱 *Titre:* ${videoInfo.title}\n👤 *Auteur:* ${videoInfo.author.name}\n⏱️ *Durée:* ${videoInfo.timestamp}\n\n_Note: Implémentez votre API de téléchargement préférée dans ce plugin_`);
+      await reply(`✅ *Audio found!*\n📱 *Title:* ${videoInfo.title}\n👤 *Author:* ${videoInfo.author.name}\n⏱️ *Duration:* ${videoInfo.timestamp}\n\n_Note: Implement your preferred download API in this plugin_`);
     } else {
-      await reply("❌ *Impossible de récupérer les informations de la vidéo*");
+      await reply("❌ *Unable to retrieve video information*");
     }
 
   } catch (error) {
-    console.error('Erreur lors du téléchargement audio:', error);
-    await reply("*❌ Erreur lors du téléchargement. Veuillez réessayer.*");
+    console.error('Error while downloading audio:', error);
+    await reply("*❌ Error during download. Please try again.*");
   } finally {
     downloading = false;
   }
