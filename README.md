@@ -6,7 +6,7 @@ Normal bot by lilnem the hacker
 
 # ⚔️ Wa-lilnem-v1  WhatsApp MD ⚔️
 
-<img src="https://files.catbox.moe/jr7hl0.jpghttps://files.catbox.moe/bxdkj5.jpg" alt="Wa-lilnem-v1 Logo" width="300">
+<img src="https://files.catbox.moe/j446k8.jpg" alt="Wa-lilnem-v1 Logo" width="300">
 
 **A smart and powerful WhatsApp bot using the Pairing Code* 🔐
 
