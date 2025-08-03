@@ -1,6 +1,6 @@
 /**
- * Template Plugin for none-jiaku-maria Bot
- * Created by jiaku-maria
+ * Template Plugin for none-lilnem-pipi Bot
+ * Created by lilnem-pipi
  * 
  * This is a template for creating new plugins.
  * Copy this file and modify it to create your own plugin.

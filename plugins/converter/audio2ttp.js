@@ -19,4 +19,4 @@ handler.command = /^to(mp3|a(udio)?)$/i
 handler.register = true
 
 export default handler
-//script by Ryzen
+//script by lilnem

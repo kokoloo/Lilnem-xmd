@@ -6,7 +6,7 @@ if (Number.parseInt(nodeVersion) < 20) {
   console.error("\x1b[31m%s\x1b[0m", "║                   ERROR: NODE.JS VERSION               ║")
   console.error("\x1b[31m%s\x1b[0m", "╚════════════════════════════════════════════════════════╝")
   console.error("\x1b[31m%s\x1b[0m", `[ERROR] You are using Node.js v${process.versions.node}`)
-  console.error("\x1b[31m%s\x1b[0m", "[ERROR] NONE-JIAKU-MARIA requires Node.js v20 or higher to run properly")
+  console.error("\x1b[31m%s\x1b[0m", "[ERROR] Lilnem-Xmd-Pipi requires Node.js v20 or higher to run properly")
   console.error("\x1b[31m%s\x1b[0m", "[ERROR] Please update your Node.js installation and try again")
   console.error("\x1b[31m%s\x1b[0m", "[ERROR] Visit https://nodejs.org to download the latest version")
   console.error("\x1b[31m%s\x1b[0m", "╔════════════════════════════════════════════════════════╗")

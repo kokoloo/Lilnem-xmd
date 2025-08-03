@@ -1,5 +1,5 @@
 {
-  "name": "NONE-JIAKU-MARIA",
+  "name": "Lilnem-Xmd-Pipi",
   "version": "1.0.0",
   "description": "WhatsApp Bot using Baileys",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hhhisoka-bot"
+    "url": "https://github.com/Lilnem-xmd-bot"
   },
   "dependencies": {
     "@colors/colors": "^1.5.0",
