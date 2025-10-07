@@ -1,6 +1,6 @@
 let handler = async (m, { reply }) => {
 // pedo
-reply("oilah 😹")
+replhandlkhar 😹")
 }
 handler.command = ["loli"]
 module.exports = handler 

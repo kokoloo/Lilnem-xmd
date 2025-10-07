@@ -1,4 +1,4 @@
-require("../MIMISETTINGS/settings");
+require("../LILNEMSETTINGS/settings");
 
 const fs = require("fs");
 const { modul } = require("../MIMILIBRARY/module");

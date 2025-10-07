@@ -1,4 +1,4 @@
-require("./MIMISETTINGS/settings");
+require("./LilnemSETTINGS/settings");
 const {
   default: makeWaSocket,
   socket,

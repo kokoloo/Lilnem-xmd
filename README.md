@@ -3,11 +3,11 @@
 A WhatsApp Bot using Baileys library
 
 ## Owner Information
-- **Owner**: hisoka
-- **Author**: hisoka-raven
+- **Owner**: lilnem
+- **Author**: lilnem-raven
 - **Co-Author**: lilnem
-- **Telegram**: [t.me/his_oka_07](https://t.me/his_oka_07)
-- **WhatsApp**: [wa.me/2250101676111](https://wa.me/2250101676111)
+- **Telegram**: [t.me/LIL_NEMXHACKER](https://t.me/LIL_NEMXHACKER)
+- **WhatsApp**: [wa.me/263781918465](https://wa.me/263781918465)
 
 ## Setup
 Run `npm start` to start the bot
