@@ -1,0 +1,15 @@
+[2025-09-16T09:39:35.281Z] Error: Connection Closed
+    at sendRawMessage (/home/runner/workspace/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:59:19)
+    at sendNode (/home/runner/workspace/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:78:16)
+    at Object.requestPairingCode (/home/runner/workspace/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:386:15)
+    at async startsesi (/home/runner/workspace/index.js:1:8144)
+
+[2025-09-16T09:40:35.307Z] Error: Timed Out
+    at /home/runner/workspace/node_modules/@whiskeysockets/baileys/lib/Utils/generics.js:145:32
+
+[2025-09-16T09:41:35.309Z] Error: Timed Out
+    at /home/runner/workspace/node_modules/@whiskeysockets/baileys/lib/Utils/generics.js:145:32
+
+[2025-09-16T09:42:35.314Z] Error: Timed Out
+    at /home/runner/workspace/node_modules/@whiskeysockets/baileys/lib/Utils/generics.js:145:32
+
